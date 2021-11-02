@@ -15,6 +15,8 @@
 				<td th:text="${currentMusician.recordLabel.labelName}" />
 				<td th:text="${currentMusician.recordLabel.location}" />
 				<td th:text="${currentMusician.recordLabel.owner}" />
+				<td th:text="${currentMusician.album.albumName}"/>
+				<td th:text="${currentMusician.album.releaseDate}" />
 				<td><a th:href="@{/edit/{id}(id=${currentMusician.id})}">Edit</a></td>
 				<td><a th:href="@{/delete/{id}(id=${currentMusician.id})}">Delete</a></td>
 			</tr>

@@ -10,12 +10,13 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.support.AbstractApplicationContext;
 
 import dmacc.beans.RecordLabel;
+import dmacc.beans.Album;
 import dmacc.beans.Musician;
 import dmacc.controller.BeanConfiguration;
 import dmacc.repository.MusicianRepository;
 
 @SpringBootApplication
-public class Week10AssessmentApplication /*implements CommandLineRunner*/{
+public class Week10AssessmentApplication/* implements CommandLineRunner*/{
 
 	public static void main(String[] args) {
 		SpringApplication.run(Week10AssessmentApplication.class, args);
@@ -37,7 +38,9 @@ public class Week10AssessmentApplication /*implements CommandLineRunner*/{
 		//Create a bean to use - not managed by Spring
 		Musician d = new Musician("Blink-182", "333-333-3333", "Punk");
 		RecordLabel r = new RecordLabel("Geffen", "Hollywood,CA", "Interscope Records");
+		Album a = new Album("Greatest Hits", "11/01/2021");
 		d.setRecordLabel(r);
+		d.setAlbum(a);
 		repo.save(d);
 		
 		List<Musician> allMyMusicians = repo.findAll();

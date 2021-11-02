@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 
 import dmacc.beans.RecordLabel;
 import dmacc.beans.Musician;
+import dmacc.beans.Album;
 
 /**
  * @author cmboe
@@ -17,7 +18,6 @@ import dmacc.beans.Musician;
  */
 @Configuration
 public class BeanConfiguration {
-	
 	@Bean
 	public Musician musician() {
 		Musician bean = new Musician("Eric Carle");
@@ -32,4 +32,9 @@ public class BeanConfiguration {
 		RecordLabel bean = new RecordLabel("Warner Bros. Studio", "Burbank,CA", "WarnerMedia");
 		return bean;
 	}
+   @Bean
+   public Album Album() {
+	   Album bean = new Album("Love Ballads", "08/15/1988");
+	   return bean;
+   }
 }

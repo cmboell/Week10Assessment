@@ -25,7 +25,8 @@ public class Musician {
 	private String genre;
 	@Autowired
 	private RecordLabel recordLabel;
-	
+	@Autowired
+	private Album album;
 	public Musician() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -59,7 +60,7 @@ public class Musician {
 	public String getArtistName() {
 		return artistName;
 	}
-	public void setArtestName(String artistName) {
+	public void setArtistName(String artistName) {
 		this.artistName = artistName;
 	}
 	public String getPhone() {
@@ -82,10 +83,24 @@ public class Musician {
 		this.recordLabel = recordLabel;
 	}
 
+	/**
+	 * @return the album
+	 */
+	public Album getAlbum() {
+		return album;
+	}
+
+	/**
+	 * @param album the album to set
+	 */
+	public void setAlbum(Album album) {
+		this.album = album;
+	}
+
 	@Override
 	public String toString() {
 		return "Contact [id=" + id + ", artistName=" + artistName + ", phone=" + phone + ", genre=" + genre
-				+ ", address=" + recordLabel + "]";
+				+ ", recordLabel=" + recordLabel + ", album="+ album + "]";
 	}
 
 	
