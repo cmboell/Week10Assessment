@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert New Musician</title>
+</head>
+<body>
+	<form th:object="${newMusician}" th:action="@{/update/{id}(id=${newMusician.id})}" method=POST>
+		Artist Name: <input name="artistName" size="20" th:field="*{artistName}"> <br />
+		Genre: <input name="genre" size="10" th:field="*{genre}"><br />
+	    Phone Number: <input name="phone" size="20" th:field="*{phone}"><br /> 
+	    Label Name: <input name="recordLabel.labelName" size="20" th:field="*{recordLabel.labelName}"><br /> 
+		Location: <input name="recordLabel.location" size="20" th:field="*{recordLabel.location}"><br /> 
+		Owner:<input name="recordLabel.owner" size="20" th:field="*{recordLabel.owner}"><br /> 
+		<input name="submit" type="submit" value="submit" />
+	</form>
+	<a href="viewAll">View all Musicians</a>
+</body>
+</html>

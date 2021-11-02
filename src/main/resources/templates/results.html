@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>View All Musicians</title>
+</head>
+<body>
+	<form>
+		<table>
+			<tr th:each="currentMusician : ${musicians}">
+				<td th:text="${currentMusician.id}" />
+				<td th:text="${currentMusician.artistName}" />
+				<td th:text="${currentMusician.phone}" />
+				<td th:text="${currentMusician.genre}" />
+				<td th:text="${currentMusician.recordLabel.labelName}" />
+				<td th:text="${currentMusician.recordLabel.location}" />
+				<td th:text="${currentMusician.recordLabel.owner}" />
+				<td><a th:href="@{/edit/{id}(id=${currentMusician.id})}">Edit</a></td>
+				<td><a th:href="@{/delete/{id}(id=${currentMusician.id})}">Delete</a></td>
+			</tr>
+		</table>
+	</form>
+	<a href="../inputMusician">Add a new musician</a>
+</body>
+</html>
